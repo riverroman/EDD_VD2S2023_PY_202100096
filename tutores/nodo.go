@@ -4,7 +4,7 @@ package tutores
 type Tutor struct{
 	Carnet int
 	Nombre string
-	Curso int
+	Curso string
 	Nota int
 }
 
