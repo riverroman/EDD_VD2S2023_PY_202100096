@@ -104,6 +104,9 @@ func cargarEstudiantes() {
 	fmt.Scanln(&ruta)
 	listaDoble.LeerArchivo(ruta)
 	fmt.Println("\nSe cargo correctamente el archivo:", ruta)
+	fmt.Println("")
+	listaDoble.Imprimir()
+
 }
 
 func ControlEstudiantes() {
