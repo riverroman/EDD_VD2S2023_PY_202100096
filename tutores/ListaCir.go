@@ -1,5 +1,7 @@
 package tutores
 
+import "strconv"
+
 type ListaDobleCircular struct {
 	Inicio   *NodoListaCircular
 	Longitud int
@@ -8,7 +10,7 @@ type ListaDobleCircular struct {
 func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, nota int) {
 	nuevoTutor := &Tutor{Carnet: carnet, Nombre: nombre, Curso: curso, Nota: nota}
 	nuevoNodo := &NodoListaCircular{Tutor: nuevoTutor, Siguiente: nil, Anterior: nil}
-	
+
 	if l.Longitud == 0 {
 		l.Inicio = nuevoNodo
 		l.Inicio.Anterior = nuevoNodo
@@ -48,6 +50,34 @@ func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, no
 		nuevoNodo.Anterior = aux
 		nuevoNodo.Siguiente = l.Inicio
 		aux.Siguiente = nuevoNodo
+		l.Inicio.Anterior = nuevoNodo // <== Verificar esto
 		l.Longitud += 1
 	}
+}
+
+// Funcion para poder graficar la lista de los tutores aceptados
+func (l *ListaDobleCircular) Graficar() {
+	nombreArchivo := "./Reportes/listadoblecircular.dot"
+	nombreImagen := "./Reportes/listadoblecircular.jpg"
+	texto := "digraph lista{\n"
+	texto += "rankdir=LR;\n"
+	texto += "node[shape = record];\n"
+	aux := l.Inicio
+	contador := 0
+	for i := 0; i < l.Longitud; i++ {
+		texto += "nodo" + strconv.Itoa(i) + "[label=\"" + "Nombre: " + aux.Tutor.Nombre + "\\n" + "Carnet: " + strconv.Itoa(aux.Tutor.Carnet) + "\"];\n"
+		aux = aux.Siguiente
+	}
+	for i := 0; i < l.Longitud-1; i++ {
+		c := i + 1
+		texto += "nodo" + strconv.Itoa(i) + "->nodo" + strconv.Itoa(c) + ";\n"
+		texto += "nodo" + strconv.Itoa(c) + "->nodo" + strconv.Itoa(i) + ";\n"
+		contador = c
+	}
+	texto += "nodo" + strconv.Itoa(contador) + "->nodo0 \n"
+	texto += "nodo0 -> " + "nodo" + strconv.Itoa(contador) + "\n"
+	texto += "}"
+	crearArchivo(nombreArchivo)
+	escribirArchivo(texto, nombreArchivo)
+	ejecutar(nombreImagen, nombreArchivo)
 }

@@ -29,6 +29,22 @@ func (l *ListaDoble) Agregar(carnet int, nombre string) {
 	}
 }
 
+// Funcion para encontrar los datos de inicio de sesion del estudiante
+func (l *ListaDoble) Buscar(carnet string, password string) bool {
+	if l.Contador == 0 {
+		return false
+	} else {
+		aux := l.Inicio
+		for aux != nil {
+			if strconv.Itoa(aux.Estudiante.Carnet) == carnet && carnet == password {
+				return true
+			}
+			aux = aux.Siguiente
+		}
+	}
+	return false
+}
+
 // Funcion para poder Agregar Ordenadamente los estudiantes por medio de su carnet
 func (l *ListaDoble) AgregarOrdenado(carnet int, nombre string) {
 	nuevoEstudiante := &Estudiante{Carnet: carnet, Nombre: nombre}

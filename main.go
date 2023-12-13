@@ -49,6 +49,8 @@ func MenuLogin() {
 
 	if usuario == "ADMIN_202100096" && password == "admin" {
 		MenuAdmin()
+	} else if listaDoble.Buscar(usuario, password) {
+		fmt.Println("Holaaa")
 	} else {
 		fmt.Println("\n| Usuario y Password Incorrecto |")
 	}
@@ -149,7 +151,7 @@ func areaReportes() {
 		if opcion == 1 {
 			listaDoble.Graficar()
 		} else if opcion == 2 {
-			continue
+			listaCircular.Graficar()
 		} else if opcion == 3 {
 			continue
 		} else if opcion == 4 {
