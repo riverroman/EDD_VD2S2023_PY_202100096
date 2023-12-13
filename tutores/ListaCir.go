@@ -24,6 +24,7 @@ func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, no
 				nuevoNodo.Siguiente = l.Inicio
 				nuevoNodo.Anterior = l.Inicio.Anterior
 				l.Inicio.Anterior = nuevoNodo
+				l.Inicio = nuevoNodo
 				l.Longitud += 1
 				return
 			}
@@ -50,7 +51,7 @@ func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, no
 		nuevoNodo.Anterior = aux
 		nuevoNodo.Siguiente = l.Inicio
 		aux.Siguiente = nuevoNodo
-		l.Inicio.Anterior = nuevoNodo // <== Verificar esto
+		l.Inicio.Anterior = nuevoNodo
 		l.Longitud += 1
 	}
 }
