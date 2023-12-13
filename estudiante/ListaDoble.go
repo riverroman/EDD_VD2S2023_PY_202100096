@@ -100,12 +100,14 @@ func (l *ListaDoble) Imprimir() {
 	aux := l.Inicio
 	contador := 1
 	fmt.Println("Total Estudiantes: ", l.Contador)
-	fmt.Println("-------------------------")
+	fmt.Println("-----------------------------------------------")
 	for contador <= l.Contador {
 		fmt.Println(aux.Estudiante.Carnet, "=>", aux.Estudiante.Nombre)
 		aux = aux.Siguiente
 		contador += 1
 	}
+	fmt.Println("-----------------------------------------------")
+	fmt.Println("")
 }
 
 // Funcion para poder graficar

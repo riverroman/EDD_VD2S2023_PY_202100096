@@ -53,9 +53,34 @@ func MenuLogin() {
 		fmt.Println("\n ⛅︎ Bienvenido al sistema:", usuario)
 		MenuAdmin()
 	} else if listaDoble.Buscar(usuario, password) {
-		fmt.Println("Holaaa")
+		fmt.Println("\n 👷 Bienvenido Estudiante: ", usuario)
+		MenuEstudiante()
 	} else {
 		fmt.Println("\n| Usuario y Password Incorrecto |")
+	}
+}
+
+func MenuEstudiante() {
+	opcion := 0
+	salir := false
+	for !salir {
+		fmt.Println("\n--------------------------------")
+		fmt.Println("  => 1. Ver Tutores Disponibles")
+		fmt.Println("  => 2. Asignarse a Tutores    ")
+		fmt.Println("  => 3. Regresar               ")
+		fmt.Println("--------------------------------")
+		fmt.Print("\nIngrese una opcion: ")
+		fmt.Scanln(&opcion)
+
+		if opcion == 1 {
+			fmt.Println("\nHaz dado click en la opcion2")
+		} else if opcion == 2 {
+			fmt.Println("\nHaz dado click en la segunda opcion")
+		} else if opcion == 3 {
+			return
+		} else {
+			fmt.Println("\n| Ingrese una opcion Valida |")
+		}
 	}
 }
 
@@ -110,7 +135,6 @@ func cargarEstudiantes() {
 	fmt.Println("\nSe cargo correctamente el archivo:", ruta)
 	fmt.Println("")
 	listaDoble.Imprimir()
-
 }
 
 func ControlEstudiantes() {
