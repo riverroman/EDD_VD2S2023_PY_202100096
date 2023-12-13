@@ -13,6 +13,8 @@ var listaDoble *estudiante.ListaDoble = &estudiante.ListaDoble{Inicio: nil, Cont
 var colaPrioridad *tutores.Cola = &tutores.Cola{Inicio: nil, Longitud: 0}
 var listaCircular *tutores.ListaDobleCircular = &tutores.ListaDobleCircular{Inicio: nil, Longitud: 0}
 
+// Matriz dispersa
+
 func main() {
 
 	opc := 0
@@ -20,9 +22,9 @@ func main() {
 
 	for !salir {
 		fmt.Println("\n-------------------------")
-		fmt.Println(" 1. 💻 Inicio de Sesion")
-		fmt.Println(" 2. ❌ Salir")
-		fmt.Println("-------------------------")
+		fmt.Println("\n 1. 💻 Inicio de Sesion")
+		fmt.Println("\n 2. ❌ Salir")
+		fmt.Println("\n-------------------------")
 		fmt.Print("\nIngrese una opcion: ")
 
 		fmt.Scanln(&opc)
@@ -41,13 +43,14 @@ func MenuLogin() {
 	usuario := ""
 	password := ""
 	fmt.Println("\n--------------------------------")
-	fmt.Print(" 👷 Usuario: ")
+	fmt.Print("\n 👷 Usuario: ")
 	fmt.Scanln(&usuario)
 	fmt.Print("\n 🔑 Password: ")
 	fmt.Scanln(&password)
-	fmt.Println("--------------------------------")
+	fmt.Println("\n--------------------------------")
 
 	if usuario == "ADMIN_202100096" && password == "admin" {
+		fmt.Println("\n ⛅︎ Bienvenido al sistema:", usuario)
 		MenuAdmin()
 	} else if listaDoble.Buscar(usuario, password) {
 		fmt.Println("Holaaa")
@@ -60,6 +63,7 @@ func MenuAdmin() {
 	opcion := 0
 	salir := false
 	for !salir {
+
 		fmt.Println("\n------------------------------------------")
 		fmt.Println("  =>	1. Carga de Estudiantes Tutores	")
 		fmt.Println("  =>	2. Carga de Estudiantes			")
@@ -164,6 +168,5 @@ func areaReportes() {
 		} else {
 			fmt.Println("\n| Ingrese una opcion valida |")
 		}
-
 	}
 }
