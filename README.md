@@ -3,10 +3,10 @@
 ## UNIVERSIDAD DE SAN CARLOS DE GUATEMALA
 #### MANUAL USUARIO
 
-
 |**CARNET**  |      **NOMBRE COMPLETO**          |  
 |----------|:-----------------------------------:|
 |202100096 |  RIVER ANDERSON - ISMALEJ ROMAN     |    
-| AUXILIAR |            CRISTIAN SUY              |   
-| SECCION  |                "A"                    |   
+| AUXILIAR |            CRISTIAN SUY             |   
+| SECCION  |                "A"                  |   
+
 
