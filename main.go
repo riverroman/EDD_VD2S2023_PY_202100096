@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"paquete/estudiante"
+	"paquete/matriz"
 	"paquete/tutores"
+	"strconv"
 )
 
 // Lista Doble Enlazada para Estudiantes
@@ -14,6 +16,9 @@ var colaPrioridad *tutores.Cola = &tutores.Cola{Inicio: nil, Longitud: 0}
 var listaCircular *tutores.ListaDobleCircular = &tutores.ListaDobleCircular{Inicio: nil, Longitud: 0}
 
 // Matriz dispersa
+var matrizDispersa *matriz.Matriz = &matriz.Matriz{Raiz: &matriz.NodoMatriz{PosX: -1, PosY: -1, Dato: &matriz.Dato{Carnet_Tutor: 0, Carnet_Estudiante: 0, Curso: "Raiz"}}, Cantidad_Alumnos: 0, Cantidad_Tutores: 0}
+
+var loggeado_estudiante string = ""
 
 func main() {
 
@@ -54,6 +59,7 @@ func MenuLogin() {
 		MenuAdmin()
 	} else if listaDoble.Buscar(usuario, password) {
 		fmt.Println("\n 👷 Bienvenido Estudiante: ", usuario)
+		loggeado_estudiante = usuario
 		MenuEstudiante()
 	} else {
 		fmt.Println("\n| Usuario y Password Incorrecto |")
@@ -77,7 +83,7 @@ func MenuEstudiante() {
 			fmt.Println("")
 			listaCircular.Mostrar()
 		} else if opcion == 2 {
-			fmt.Println("\nHaz dado click en la segunda opcion")
+			AsignacionCursos()
 		} else if opcion == 3 {
 			return
 		} else {
@@ -167,6 +173,27 @@ func ControlEstudiantes() {
 	}
 }
 
+func AsignacionCursos() {
+	opcion := ""
+	salir := false
+	for !salir {
+		fmt.Print("\nIngrese el codigo del curso: ")
+		fmt.Scanln(&opcion)
+		if listaCircular.Buscar(opcion) {
+			TutorBuscado := listaCircular.BuscarTutor(opcion)
+			estudiante, err := strconv.Atoi(loggeado_estudiante)
+			if err != nil {
+				break
+			}
+			matrizDispersa.Insertar_Elemento(estudiante, TutorBuscado.Tutor.Carnet, opcion)
+			salir = true
+		} else {
+			fmt.Println("\n No hay tutores para el curso:", opcion)
+			break
+		}
+	}
+}
+
 func areaReportes() {
 	salir := false
 	opcion := 0
@@ -186,7 +213,7 @@ func areaReportes() {
 		} else if opcion == 2 {
 			listaCircular.Graficar()
 		} else if opcion == 3 {
-			continue
+			matrizDispersa.Graficar()
 		} else if opcion == 4 {
 			continue
 		} else if opcion == 5 {

@@ -96,3 +96,31 @@ func (l *ListaDobleCircular) Graficar() {
 	escribirArchivo(texto, nombreArchivo)
 	ejecutar(nombreImagen, nombreArchivo)
 }
+
+// Funcion para buscar
+func (l *ListaDobleCircular) Buscar(curso string) bool {
+	if l.Longitud == 0 {
+		return false
+	} else {
+		aux := l.Inicio
+		for aux != nil {
+			if aux.Tutor.Curso == curso {
+				return true
+			}
+			aux = aux.Siguiente
+		}
+	}
+	return false
+}
+
+// Funcion para buscar Tutor
+func (l *ListaDobleCircular) BuscarTutor(curso string) *NodoListaCircular {
+	aux := l.Inicio
+	for aux != nil {
+		if aux.Tutor.Curso == curso {
+			return aux
+		}
+		aux = aux.Siguiente
+	}
+	return nil
+}
