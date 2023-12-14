@@ -73,7 +73,9 @@ func MenuEstudiante() {
 		fmt.Scanln(&opcion)
 
 		if opcion == 1 {
-			fmt.Println("\nHaz dado click en la opcion2")
+			fmt.Println("\n 👷  Tutores Disponibles  ")
+			fmt.Println("")
+			listaCircular.Mostrar()
 		} else if opcion == 2 {
 			fmt.Println("\nHaz dado click en la segunda opcion")
 		} else if opcion == 3 {

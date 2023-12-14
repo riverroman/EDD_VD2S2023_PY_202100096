@@ -1,6 +1,9 @@
 package tutores
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 type ListaDobleCircular struct {
 	Inicio   *NodoListaCircular
@@ -53,6 +56,17 @@ func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, no
 		aux.Siguiente = nuevoNodo
 		l.Inicio.Anterior = nuevoNodo
 		l.Longitud += 1
+	}
+}
+
+// Funcion para poder mostrar los tutores a los estudiantes
+func (l *ListaDobleCircular) Mostrar() {
+	aux := l.Inicio
+	contador := 1
+	for contador <= l.Longitud {
+		fmt.Println("Curso:", aux.Tutor.Curso, " Nombre:", aux.Tutor.Nombre)
+		aux = aux.Siguiente
+		contador += 1
 	}
 }
 
