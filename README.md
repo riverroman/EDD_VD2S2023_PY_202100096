@@ -7,6 +7,6 @@
 |**CARNET**  |      **NOMBRE COMPLETO**          |  
 |----------|:-----------------------------------:|
 |202100096 |  RIVER ANDERSON - ISMALEJ ROMAN     |    
-| AUXILIAR |            RISTIAN SUY              |   
+| AUXILIAR |            CRISTIAN SUY              |   
 | SECCION  |                "A"                    |   
 
