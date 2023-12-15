@@ -1,12 +1,16 @@
 package main
 
 import (
+	//"fmt"
 	"fmt"
-	"paquete/estudiante"
-	"paquete/matriz"
-	"paquete/tutores"
-	"strconv"
+	"paquete/cursos"
+	//"paquete/estudiante"
+	//"paquete/matriz"
+	//"paquete/tutores"
+	//"strconv"
 )
+
+/*
 
 // Lista Doble Enlazada para Estudiantes
 var listaDoble *estudiante.ListaDoble = &estudiante.ListaDoble{Inicio: nil, Contador: 0}
@@ -19,6 +23,31 @@ var listaCircular *tutores.ListaDobleCircular = &tutores.ListaDobleCircular{Inic
 var matrizDispersa *matriz.Matriz = &matriz.Matriz{Raiz: &matriz.NodoMatriz{PosX: -1, PosY: -1, Dato: &matriz.Dato{Carnet_Tutor: 0, Carnet_Estudiante: 0, Curso: "Raiz"}}, Cantidad_Alumnos: 0, Cantidad_Tutores: 0}
 
 var loggeado_estudiante string = ""
+
+*/
+
+func main() {
+
+	arbolBinario := cursos.ArbolBB{Raiz: nil}
+	arbolBinario.InsertarElemento("0773")
+	arbolBinario.InsertarElemento("0771")
+	arbolBinario.InsertarElemento("0770")
+	arbolBinario.InsertarElemento("0772")
+	arbolBinario.InsertarElemento("0775")
+	arbolBinario.InsertarElemento("0774")
+	arbolBinario.InsertarElemento("0777")
+	arbolBinario.Recorridos()
+	arbolBinario.Graficar()
+	buscarElemento := arbolBinario.Busqueda("0777")
+	if buscarElemento {
+		fmt.Println("Existe el curso")
+	} else {
+		fmt.Println("No Existe el curso")
+	}
+
+}
+
+/*
 
 func main() {
 
@@ -223,3 +252,5 @@ func areaReportes() {
 		}
 	}
 }
+
+*/

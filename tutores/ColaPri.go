@@ -61,7 +61,6 @@ func (c *Cola) EncolarPrioridad(carnet int, nombre string, curso string, nota in
 	c.Longitud++
 }
 
-
 func (c *Cola) Descolar() {
 	if c.Longitud == 0 {
 		fmt.Println("No hay tutores en la cola")
