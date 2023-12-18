@@ -25,4 +25,37 @@ manipulación de la información en ellas.
 
 </center>
 
+---
+>### **Menu Administrador**
+* Al iniciar sesion como administrador tendremos diferentes acciones por hacer cargar achivos de entradas, generar reportes graficos y tener control sobre aceptar o rechazar Tutores Academicos.
+
+<center>
+
+![Menu Administrador](Reportes/imagenes/menu_administrador.png)
+
+</center
+
+---
+>### **Menu Estudiante**
+* Al iniciar sesion como estudiante podremos ver los tutores disponibles y poder asignarnos a un tutor en especifico ingresando el numero de curso.
+
+<center>
+
+![Menu Estudiante](Reportes/imagenes/menu_estudiante.jpg)
+
+</center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
