@@ -19,11 +19,9 @@ manipulación de la información en ellas.
 >### **Login**
 * Al iniciar el programa, contaremos con un login para iniciar sesion como Administrador o como Estudiante.
 
-<center>
-
-![Login](Reportes/imagenes/login.png)
-
-</center>
+<p align="center">
+    <img src="./Reportes/imagenes/login.png">
+</p>
 
 ---
 >### **Menu Administrador**
