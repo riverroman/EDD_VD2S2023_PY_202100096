@@ -11,13 +11,11 @@
 #### 📌 MANUAL USUARIO
 
 ### **Objetivos Generales**
-* Aplicar los conocimientos del curso Estructuras de Datos en el desarrollo de
-las diferentes estructuras de datos y los diferentes algoritmos de
-manipulación de la información en ellas.
+* Aplicar los conocimientos del curso Estructuras de Datos en el desarrollo de las diferentes estructuras de datos y los diferentes algoritmos de manipulación de la información en ellas.
 
 ---
 >### **Login**
-* Al iniciar el programa, contaremos con un login para iniciar sesion como Administrador o como Estudiante.
+* Al iniciar el programa, contaremos con un login para iniciar sesión como Administrador o como Estudiante.
 
 <p align="center">
     <img src="./Reportes/imagenes/login.png">
@@ -25,91 +23,61 @@ manipulación de la información en ellas.
 
 ---
 >### **Menu Administrador**
-* Al iniciar sesion como administrador tendremos diferentes acciones por hacer cargar achivos de entradas, generar reportes graficos y tener control sobre aceptar o rechazar Tutores Academicos.
+* Al iniciar sesión como administrador tendremos diferentes acciones por hacer cargar archivos de entradas, generar reportes gráficos y tener control sobre aceptar o rechazar Tutores Académicos.
 
-<center>
-
-![Menu Administrador](Reportes/imagenes/menu_administrador.png)
-
-</center
+<p align="center">
+    <img src="./Reportes/imagenes/menu_administrador.png">
+</p>
 
 ---
 #### **Carga de Tutores**
 
-<center>
-
-![Menu Administrador](Reportes/imagenes/tutores.png)
-
-</center
+<p align="center">
+    <img src="./Reportes/imagenes/tutores.png">
+</p>
 
 ---
 ### **Carga de Estudiantes**
 
-<center>
-
-![Menu Administrador](Reportes/imagenes/estudiantes.jpg)
-
-</center
+<p align="center">
+    <img src="./Reportes/imagenes/estudiantes.jpg">
+</p>
 
 ---
 
 ### **Carga de Cursos**
 
-<center>
-
-![Menu Administrador](Reportes/imagenes/cursos.png)
-
-</center
+<p align="center">
+    <img src="./Reportes/imagenes/cursos.png">
+</p>
 
 ---
 ---
-* Nota: Para cargar los archivos de entrada se debe de colocar el nombre del archivo con extension .csv
+* Nota: Para cargar los archivos de entrada se debe colocar el nombre del archivo con extensión .csv.
 
 ---
 
 ### **Control de Estudiantes Tutores**
 
-* Luego de cargar los tutores, contaremos con una opcion para elegir que tutores aceptar.
+* Luego de cargar los tutores, contaremos con una opción para elegir qué tutores aceptar.
 
-<center>
-
-![Menu Administrador](Reportes/imagenes/control_tutores.png)
-
-</center
+<p align="center">
+    <img src="./Reportes/imagenes/control_tutores.png">
+</p>
 
 ---
 
 ### **Reportes**
 
-* En el Área de Reportes podremos generar graficos, para poder visualizar las estructuras que se implementaron en el proyecto.
+* En el Área de Reportes podremos generar gráficos, para poder visualizar las estructuras que se implementaron en el proyecto.
 
-<center>
-
-![Menu Administrador](Reportes/imagenes/reportes.png)
-
-</center
+<p align="center">
+    <img src="./Reportes/imagenes/reportes.png">
+</p>
 
 >### **Menu Estudiante**
-* Al iniciar sesion como estudiante podremos ver los tutores disponibles y poder asignarnos a un tutor en especifico ingresando el numero de curso.
+* Al iniciar sesión como estudiante podremos ver los tutores disponibles y poder asignarnos a un tutor en específico ingresando el número de curso.
 
-<center>
-
-![Menu Estudiante](Reportes/imagenes/menu_estudiante.jpg)
-
-</center
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p align="center">
+    <img src="./Reportes/imagenes/menu_estudiante.jpg">
+</p>
