@@ -1,6 +1,10 @@
 package tutores
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"text/tabwriter"
+)
 
 type Cola struct {
 	Inicio   *NodoCola
@@ -85,4 +89,24 @@ func (c *Cola) Primero() {
 			fmt.Print("Siguiente: No hay mas tutores por evaluar")
 		}
 	}
+}
+
+// Imprimir Tutores cargados
+func (c *Cola) Imprimir() {
+	if c.Longitud == 0 {
+		fmt.Println("\nCola de Prioridad Vacia")
+		return
+	}
+
+	w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', tabwriter.AlignRight|tabwriter.Debug)
+	fmt.Fprintln(w, "\nCarnet\tNombre\tCurso\tNota")
+
+	aux := c.Inicio
+	for aux != nil {
+		fmt.Fprintf(w, "%d\t%s\t%s\t%d\t", aux.Tutor.Carnet, aux.Tutor.Nombre, aux.Tutor.Curso, aux.Tutor.Nota)
+		fmt.Fprintln(w, "")
+		aux = aux.Siguiente
+	}
+
+	w.Flush()
 }

@@ -6,6 +6,8 @@ import (
 	"math"
 	"os"
 	"strconv"
+
+	"github.com/olekukonko/tablewriter"
 )
 
 type ArbolAVL struct {
@@ -135,9 +137,17 @@ func (a *ArbolAVL) LeerJson(ruta string) {
 		log.Fatal("Error al decodificar el JSON:", err)
 	}
 
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader([]string{"Código", "Nombre"})
+	for _, curso := range datos.Cursos {
+		table.Append([]string{curso.Codigo, curso.Nombre})
+	}
+	table.Render()
+
 	for _, curso := range datos.Cursos {
 		a.InsertarElemento(curso.Codigo)
 	}
+
 }
 
 func (a *ArbolAVL) Graficar() {

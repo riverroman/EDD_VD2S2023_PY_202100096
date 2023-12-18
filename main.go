@@ -137,6 +137,7 @@ func cargarTutores() {
 	fmt.Scanln(&ruta)
 	colaPrioridad.LeerArchivo(ruta)
 	fmt.Println("\nSe cargo correctamente el archivo:", ruta)
+	colaPrioridad.Imprimir()
 }
 
 func cargarEstudiantes() {

@@ -36,6 +36,34 @@ manipulación de la información en ellas.
 </center
 
 ---
+#### **Carga de Tutores**
+
+<center>
+
+![Menu Administrador](Reportes/imagenes/tutores.png)
+
+</center
+
+---
+### **Carga de Estudiantes**
+
+<center>
+
+![Menu Administrador](Reportes/imagenes/estudiantes.jpg)
+
+</center
+
+---
+
+### **Carga de Cursos**
+
+<center>
+
+![Menu Administrador](Reportes/imagenes/cursos.png)
+
+</center
+
+---
 >### **Menu Estudiante**
 * Al iniciar sesion como estudiante podremos ver los tutores disponibles y poder asignarnos a un tutor en especifico ingresando el numero de curso.
 
@@ -44,6 +72,7 @@ manipulación de la información en ellas.
 ![Menu Estudiante](Reportes/imagenes/menu_estudiante.jpg)
 
 </center
+
 
 
 
