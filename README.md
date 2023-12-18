@@ -64,6 +64,33 @@ manipulación de la información en ellas.
 </center
 
 ---
+---
+* Nota: Para cargar los archivos de entrada se debe de colocar el nombre del archivo con extension .csv
+
+---
+
+### **Control de Estudiantes Tutores**
+
+* Luego de cargar los tutores, contaremos con una opcion para elegir que tutores aceptar.
+
+<center>
+
+![Menu Administrador](Reportes/imagenes/control_tutores.png)
+
+</center
+
+---
+
+### **Reportes**
+
+* En el Área de Reportes podremos generar graficos, para poder visualizar las estructuras que se implementaron en el proyecto.
+
+<center>
+
+![Menu Administrador](Reportes/imagenes/reportes.png)
+
+</center
+
 >### **Menu Estudiante**
 * Al iniciar sesion como estudiante podremos ver los tutores disponibles y poder asignarnos a un tutor en especifico ingresando el numero de curso.
 
