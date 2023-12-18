@@ -2,11 +2,16 @@
 
 ## UNIVERSIDAD DE SAN CARLOS DE GUATEMALA
 
+
+<p align="center">
+
 |**CARNET**  |      **NOMBRE COMPLETO**          |  
 |----------|:-----------------------------------:|
 |202100096 |  RIVER ANDERSON - ISMALEJ ROMAN     |    
 | AUXILIAR |            CRISTIAN SUY             |   
-| SECCION  |                "A"                  |   
+| SECCION  |                "A"                  |  
+ 
+</p>
 
 #### 📌 MANUAL USUARIO
 

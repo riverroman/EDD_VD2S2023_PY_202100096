@@ -14,7 +14,6 @@ type ArbolAVL struct {
 	Raiz *NodoArbol
 }
 
-/***************************************/
 type Curso struct {
 	Codigo string `json:"Codigo"`
 	Nombre string `json:"Nombre"`
@@ -23,8 +22,6 @@ type Curso struct {
 type DatosCursos struct {
 	Cursos []Curso `json:"Cursos"`
 }
-
-/***************************************/
 
 func (a *ArbolAVL) altura(raiz *NodoArbol) int {
 	if raiz == nil {
