@@ -110,7 +110,7 @@
 
 >### **Lista Enlazada Doble**
 
->##### **Se utilizo una estructura para el manejo de ordenado de estudiante por medio de su carnet.**
+>##### **Se utilizo esta estructura para el manejo de ordenado de estudiante por medio de su carnet.**
 
     func (l *ListaDoble) AgregarOrdenado(carnet int, nombre string) {
 	    nuevoEstudiante := &Estudiante{Carnet: carnet, Nombre: nombre}
