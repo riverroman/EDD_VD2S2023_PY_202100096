@@ -1,16 +1,13 @@
 package main
 
 import (
-	//"fmt"
 	"fmt"
 	"paquete/cursos"
-	//"paquete/estudiante"
-	//"paquete/matriz"
-	//"paquete/tutores"
-	//"strconv"
+	"paquete/estudiante"
+	"paquete/matriz"
+	"paquete/tutores"
+	"strconv"
 )
-
-/*
 
 // Lista Doble Enlazada para Estudiantes
 var listaDoble *estudiante.ListaDoble = &estudiante.ListaDoble{Inicio: nil, Contador: 0}
@@ -22,32 +19,10 @@ var listaCircular *tutores.ListaDobleCircular = &tutores.ListaDobleCircular{Inic
 // Matriz dispersa
 var matrizDispersa *matriz.Matriz = &matriz.Matriz{Raiz: &matriz.NodoMatriz{PosX: -1, PosY: -1, Dato: &matriz.Dato{Carnet_Tutor: 0, Carnet_Estudiante: 0, Curso: "Raiz"}}, Cantidad_Alumnos: 0, Cantidad_Tutores: 0}
 
+// Arbol
+var arbol *cursos.ArbolAVL = &cursos.ArbolAVL{Raiz: nil}
+
 var loggeado_estudiante string = ""
-
-*/
-
-func main() {
-
-	arbolBinario := cursos.ArbolBB{Raiz: nil}
-	arbolBinario.InsertarElemento("0773")
-	arbolBinario.InsertarElemento("0771")
-	arbolBinario.InsertarElemento("0770")
-	arbolBinario.InsertarElemento("0772")
-	arbolBinario.InsertarElemento("0775")
-	arbolBinario.InsertarElemento("0774")
-	arbolBinario.InsertarElemento("0777")
-	arbolBinario.Recorridos()
-	arbolBinario.Graficar()
-	buscarElemento := arbolBinario.Busqueda("0777")
-	if buscarElemento {
-		fmt.Println("Existe el curso")
-	} else {
-		fmt.Println("No Existe el curso")
-	}
-
-}
-
-/*
 
 func main() {
 
@@ -83,7 +58,7 @@ func MenuLogin() {
 	fmt.Scanln(&password)
 	fmt.Println("\n--------------------------------")
 
-	if usuario == "ADMIN_202100096" && password == "admin" {
+	if usuario == "ADMIN_202100096" && password == "Admin" {
 		fmt.Println("\n ⛅︎ Bienvenido al sistema:", usuario)
 		MenuAdmin()
 	} else if listaDoble.Buscar(usuario, password) {
@@ -145,7 +120,7 @@ func MenuAdmin() {
 		case 2:
 			cargarEstudiantes()
 		case 3:
-			continue
+			cargarCursos()
 		case 4:
 			ControlEstudiantes()
 		case 5:
@@ -174,6 +149,14 @@ func cargarEstudiantes() {
 	listaDoble.Imprimir()
 }
 
+func cargarCursos() {
+	ruta := ""
+	fmt.Print("\nNombre de Archivo: ")
+	fmt.Scanln(&ruta)
+	arbol.LeerJson(ruta)
+	fmt.Println("\nSe cargo correctamente el archivo: ", ruta)
+}
+
 func ControlEstudiantes() {
 	opcion := 0
 	salir := false
@@ -189,7 +172,24 @@ func ControlEstudiantes() {
 		fmt.Scanln(&opcion)
 
 		if opcion == 1 {
-			listaCircular.Agregar(colaPrioridad.Inicio.Tutor.Carnet, colaPrioridad.Inicio.Tutor.Nombre, colaPrioridad.Inicio.Tutor.Curso, colaPrioridad.Inicio.Tutor.Nota)
+			curso := colaPrioridad.Inicio.Tutor.Curso
+
+			if listaCircular.ExisteTutorEnCurso(curso) {
+				notaNueva := colaPrioridad.Inicio.Tutor.Nota
+				notaActual := listaCircular.ObtenerNotaTutorEnCurso(curso)
+
+				if notaNueva > notaActual {
+					fmt.Println("\nSe sustituyó tutor de curso actual")
+					fmt.Println("")
+					listaCircular.SustituirTutor(curso, colaPrioridad.Inicio.Tutor.Carnet, colaPrioridad.Inicio.Tutor.Nombre, notaNueva)
+				} else {
+					fmt.Println("\nSe registró tutor con éxito")
+					fmt.Println("")
+					listaCircular.Agregar(colaPrioridad.Inicio.Tutor.Carnet, colaPrioridad.Inicio.Tutor.Nombre, curso, notaNueva)
+				}
+			} else {
+				listaCircular.Agregar(colaPrioridad.Inicio.Tutor.Carnet, colaPrioridad.Inicio.Tutor.Nombre, curso, colaPrioridad.Inicio.Tutor.Nota)
+			}
 			colaPrioridad.Descolar()
 		} else if opcion == 2 {
 			colaPrioridad.Descolar()
@@ -208,16 +208,24 @@ func AsignacionCursos() {
 	for !salir {
 		fmt.Print("\nIngrese el codigo del curso: ")
 		fmt.Scanln(&opcion)
-		if listaCircular.Buscar(opcion) {
-			TutorBuscado := listaCircular.BuscarTutor(opcion)
-			estudiante, err := strconv.Atoi(loggeado_estudiante)
-			if err != nil {
+
+		if arbol.Busqueda(opcion) {
+			if listaCircular.Buscar(opcion) {
+				TutorBuscado := listaCircular.BuscarTutor(opcion)
+				estudiante, err := strconv.Atoi(loggeado_estudiante)
+				if err != nil {
+					break
+				}
+				matrizDispersa.Insertar_Elemento(estudiante, TutorBuscado.Tutor.Carnet, opcion)
+				fmt.Println("\nSe asigno el curso:", opcion)
+				break
+			} else {
+				fmt.Println("\n No hay tutores para el curso:", opcion)
 				break
 			}
-			matrizDispersa.Insertar_Elemento(estudiante, TutorBuscado.Tutor.Carnet, opcion)
-			salir = true
+
 		} else {
-			fmt.Println("\n No hay tutores para el curso:", opcion)
+			fmt.Println("\n El curso no existe en el sistema:", opcion)
 			break
 		}
 	}
@@ -244,7 +252,7 @@ func areaReportes() {
 		} else if opcion == 3 {
 			matrizDispersa.Graficar()
 		} else if opcion == 4 {
-			continue
+			arbol.Graficar()
 		} else if opcion == 5 {
 			return
 		} else {
@@ -252,5 +260,3 @@ func areaReportes() {
 		}
 	}
 }
-
-*/

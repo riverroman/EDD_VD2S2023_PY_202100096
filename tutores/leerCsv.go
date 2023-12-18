@@ -32,11 +32,10 @@ func (c *Cola) LeerArchivo(ruta string) {
 			encabezado = false
 			continue
 		}
-		
-		valor, _ := strconv.Atoi(linea[0])
-		valor2, _ := strconv.Atoi(linea[3])
-		c.EncolarPrioridad(valor, linea[1], linea[2], valor2)
+
+		carnet, _ := strconv.Atoi(linea[0])
+		nota, _ := strconv.Atoi(linea[3])
+		c.EncolarPrioridad(carnet, linea[1], "0"+linea[2], nota)
 
 	}
-
 }

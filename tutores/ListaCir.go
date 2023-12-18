@@ -103,11 +103,13 @@ func (l *ListaDobleCircular) Buscar(curso string) bool {
 		return false
 	} else {
 		aux := l.Inicio
-		for aux != nil {
+		contador := 1
+		for l.Longitud >= contador {
 			if aux.Tutor.Curso == curso {
 				return true
 			}
 			aux = aux.Siguiente
+			contador++
 		}
 	}
 	return false
@@ -116,11 +118,84 @@ func (l *ListaDobleCircular) Buscar(curso string) bool {
 // Funcion para buscar Tutor
 func (l *ListaDobleCircular) BuscarTutor(curso string) *NodoListaCircular {
 	aux := l.Inicio
-	for aux != nil {
+	contador := 1
+	for l.Longitud >= contador {
 		if aux.Tutor.Curso == curso {
 			return aux
 		}
 		aux = aux.Siguiente
+		contador++
 	}
 	return nil
+}
+
+// Función para verificar si ya existe un tutor para el curso dado en la lista circular
+func (l *ListaDobleCircular) ExisteTutorEnCurso(codigoCurso string) bool {
+	actual := l.Inicio
+	for i := 0; i < l.Longitud; i++ {
+		if actual.Tutor.Curso == codigoCurso {
+			return true
+		}
+		actual = actual.Siguiente
+	}
+	return false
+}
+
+// Función para obtener la nota del tutor actual en el curso dado en la lista circular
+func (l *ListaDobleCircular) ObtenerNotaTutorEnCurso(codigoCurso string) int {
+	actual := l.Inicio
+	for i := 0; i < l.Longitud; i++ {
+		if actual.Tutor.Curso == codigoCurso {
+			return actual.Tutor.Nota
+		}
+		actual = actual.Siguiente
+	}
+	// Puedes manejar el caso cuando no se encuentra el tutor según tu lógica
+	return 0
+}
+
+// Función para sustituir el tutor actual en el curso dado en la lista circular
+func (l *ListaDobleCircular) SustituirTutor(codigoCurso string, carnet int, nombre string, nota int) {
+	actual := l.Inicio
+	for i := 0; i < l.Longitud; i++ {
+		if actual.Tutor.Curso == codigoCurso {
+			actual.Tutor.Carnet = carnet
+			actual.Tutor.Nombre = nombre
+			actual.Tutor.Nota = nota
+			return
+		}
+		actual = actual.Siguiente
+	}
+	// Puedes manejar el caso cuando no se encuentra el tutor según tu lógica
+	fmt.Println("Error: Tutor no encontrado para sustitución")
+}
+
+// Función para eliminar el tutor de un curso específico en la lista circular
+func (l *ListaDobleCircular) EliminarTutor(curso string) {
+	if l.Longitud == 0 {
+		return
+	}
+
+	// Buscar el tutor en la lista
+	aux := l.Inicio
+	for i := 0; i < l.Longitud; i++ {
+		if aux.Tutor.Curso == curso {
+			// Enlace para saltar el nodo actual
+			aux.Anterior.Siguiente = aux.Siguiente
+			aux.Siguiente.Anterior = aux.Anterior
+
+			// Ajustar el inicio si es necesario
+			if l.Inicio == aux {
+				l.Inicio = aux.Siguiente
+			}
+
+			// Reducir la longitud de la lista
+			l.Longitud--
+
+			// Liberar memoria del nodo
+			aux = nil
+			return
+		}
+		aux = aux.Siguiente
+	}
 }

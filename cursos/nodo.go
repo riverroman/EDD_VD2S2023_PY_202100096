@@ -1,14 +1,9 @@
 package cursos
 
 type NodoArbol struct {
-	Izquierdo *NodoArbol
-	Derecho   *NodoArbol
-	Valor     string
+	Izquierdo         *NodoArbol
+	Derecho           *NodoArbol
+	Valor             string
+	Altura            int
+	Factor_Equilibrio int
 }
-
-
-
-
-
-
-

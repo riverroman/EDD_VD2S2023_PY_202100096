@@ -1,0 +1,185 @@
+{
+    "Cursos": [
+      {
+        "Codigo": "0780",
+        "Nombre": "Introduccion a la programacion y computacion 1"
+      },
+      {
+        "Codigo": "0771",
+        "Nombre": "Introduccion a la programacion y computacion 2"
+      },
+      {
+        "Codigo": "0772",
+        "Nombre": "Estructura de Datos"
+      },
+      {
+        "Codigo": "0773",
+        "Nombre": "Manejo e implentacion de Archivos"
+      },
+      {
+        "Codigo": "0781",
+        "Nombre": "Organizacion de Lenguajes De Compiladores 2"
+      },
+      {
+        "Codigo": "0779",
+        "Nombre": "Matematica 1"
+      },
+      {
+        "Codigo": "0782",
+        "Nombre": "Redes de Computadoras"
+      },
+      {
+        "Codigo": "0783",
+        "Nombre": "Desarrollo de Software"
+      },
+      {
+        "Codigo": "0784",
+        "Nombre": "Inteligencia Artificial"
+      },
+      {
+        "Codigo": "0785",
+        "Nombre": "Sistemas Operativos"
+      },
+      {
+        "Codigo": "0786",
+        "Nombre": "Base de Datos Avanzada"
+      },
+      {
+        "Codigo": "0787",
+        "Nombre": "Seguridad Informatica"
+      },
+      {
+        "Codigo": "0788",
+        "Nombre": "Diseño de Algoritmos"
+      },
+      {
+        "Codigo": "0789",
+        "Nombre": "Ingenieria de Software"
+      },
+      {
+        "Codigo": "0790",
+        "Nombre": "Programacion Web Avanzada"
+      },
+      {
+        "Codigo": "0791",
+        "Nombre": "Arquitectura de Computadoras"
+      },
+      {
+        "Codigo": "0792",
+        "Nombre": "Compiladores"
+      },
+      {
+        "Codigo": "0793",
+        "Nombre": "Graficos por Computadora"
+      },
+      {
+        "Codigo": "0794",
+        "Nombre": "Sistemas Distribuidos"
+      },
+      {
+        "Codigo": "0795",
+        "Nombre": "Realidad Virtual"
+      },
+      {
+        "Codigo": "0796",
+        "Nombre": "Aplicaciones Moviles"
+      },
+      {
+        "Codigo": "0797",
+        "Nombre": "Big Data"
+      },
+      {
+        "Codigo": "0798",
+        "Nombre": "Blockchain"
+      },
+      {
+        "Codigo": "0799",
+        "Nombre": "Ciberseguridad"
+      },
+      {
+        "Codigo": "0800",
+        "Nombre": "Computacion Cuantica"
+      },
+      {
+        "Codigo": "0801",
+        "Nombre": "Internet de las Cosas"
+      },
+      {
+        "Codigo": "0802",
+        "Nombre": "Machine Learning"
+      },
+      {
+        "Codigo": "0803",
+        "Nombre": "Cloud Computing"
+      },
+      {
+        "Codigo": "0804",
+        "Nombre": "Automatizacion"
+      },
+      {
+        "Codigo": "0805",
+        "Nombre": "Analisis de Datos"
+      },
+      {
+        "Codigo": "0806",
+        "Nombre": "Tecnologias Emergentes"
+      },
+      {
+        "Codigo": "0807",
+        "Nombre": "Desarrollo Agil"
+      },
+      {
+        "Codigo": "0808",
+        "Nombre": "Analisis y Diseño de Sistemas"
+      },
+      {
+        "Codigo": "0809",
+        "Nombre": "Robótica"
+      },
+      {
+        "Codigo": "0810",
+        "Nombre": "Desarrollo de Videojuegos"
+      },
+      {
+        "Codigo": "0811",
+        "Nombre": "Automatizacion Industrial"
+      },
+      {
+        "Codigo": "0812",
+        "Nombre": "Programacion Funcional"
+      },
+      {
+        "Codigo": "0813",
+        "Nombre": "Ingenieria de Requisitos"
+      },
+      {
+        "Codigo": "0814",
+        "Nombre": "Ciberseguridad Industrial"
+      },
+      {
+        "Codigo": "0815",
+        "Nombre": "Realidad Aumentada"
+      },
+      {
+        "Codigo": "0816",
+        "Nombre": "Desarrollo Frontend"
+      },
+      {
+        "Codigo": "0817",
+        "Nombre": "Desarrollo Backend"
+      },
+      {
+        "Codigo": "0818",
+        "Nombre": "Analisis Predictivo"
+      },
+      {
+        "Codigo": "0819",
+        "Nombre": "Computacion Grafica"
+      },
+      {
+        "Codigo": "0820",
+        "Nombre": "Pruebas de Software"
+      }
+    ]
+  }
+  
