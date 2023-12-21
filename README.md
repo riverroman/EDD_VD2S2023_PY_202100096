@@ -168,8 +168,8 @@
 > **Para el manejo de tutores se utilizo una lista circular luego de hacer aceptados mediante la estructura de cola de prioridad.**
 
         func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, nota int) {
-	        nuevoTutor := &Tutor{Carnet: carnet, Nombre: nombre, Curso: curso, Nota: nota}
-	        nuevoNodo := &NodoListaCircular{Tutor: nuevoTutor, Siguiente: nil, Anterior: nil}
+            nuevoTutor := &Tutor{Carnet: carnet, Nombre: nombre, Curso: curso, Nota: nota}
+            nuevoNodo := &NodoListaCircular{Tutor: nuevoTutor, Siguiente: nil, Anterior: nil}
 
             if l.Longitud == 0 {
                 l.Inicio = nuevoNodo
@@ -178,41 +178,20 @@
                 l.Longitud++
             } else {
                 aux := l.Inicio
-                contador := 1
-                for contador < l.Longitud {
-                    if l.Inicio.Tutor.Carnet > carnet {
-                        nuevoNodo.Siguiente = l.Inicio
-                        nuevoNodo.Anterior = l.Inicio.Anterior
-                        l.Inicio.Anterior = nuevoNodo
-                        l.Inicio = nuevoNodo
-                        l.Longitud += 1
+                for i := 0; i < l.Longitud; i++ {
+                    if aux.Tutor.Curso == curso {
+                        if aux.Tutor.Nota < nota {
+                            aux.Tutor = nuevoTutor
+                        }
                         return
                     }
-                    if aux.Tutor.Carnet < carnet {
-                        aux = aux.Siguiente
-                    } else {
-                        nuevoNodo.Anterior = aux.Anterior
-                        aux.Anterior.Siguiente = nuevoNodo
-                        nuevoNodo.Siguiente = aux
-                        aux.Anterior = nuevoNodo
-                        l.Longitud += 1
-                        return
-                    }
-                    contador += 1
+                    aux = aux.Siguiente
                 }
-                if aux.Tutor.Carnet > carnet {
-                    nuevoNodo.Siguiente = aux
-                    nuevoNodo.Anterior = aux.Anterior
-                    aux.Anterior.Siguiente = nuevoNodo
-                    aux.Anterior = nuevoNodo
-                    l.Longitud += 1
-                    return
-                }
-                nuevoNodo.Anterior = aux
                 nuevoNodo.Siguiente = l.Inicio
-                aux.Siguiente = nuevoNodo
+                nuevoNodo.Anterior = l.Inicio.Anterior
+                l.Inicio.Anterior.Siguiente = nuevoNodo
                 l.Inicio.Anterior = nuevoNodo
-                l.Longitud += 1
+                l.Longitud++
             }
         }
 
