@@ -161,9 +161,10 @@ func cargarCursos() {
 func ControlEstudiantes() {
 	opcion := 0
 	salir := false
-
 	for !salir {
+
 		colaPrioridad.Primero()
+
 		fmt.Println("\n---------------------")
 		fmt.Println("    1. Aceptar       ")
 		fmt.Println("    2. Rechazar      ")
@@ -177,7 +178,7 @@ func ControlEstudiantes() {
 
 			if listaCircular.ExisteTutorEnCurso(curso) {
 				notaNueva := colaPrioridad.Inicio.Tutor.Nota
-				notaActual := listaCircular.ObtenerNotaTutorEnCurso(curso)
+				notaActual := listaCircular.ObtenerNotaMasAltaEnCurso(curso)
 
 				if notaNueva > notaActual {
 					fmt.Println("\nSe sustituyó tutor de curso actual")

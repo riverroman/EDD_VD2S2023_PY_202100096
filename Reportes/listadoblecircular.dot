@@ -1,24 +1,49 @@
 digraph lista{
 rankdir=LR;
 node[shape = record];
-nodo0[label="Nombre: Kewin Maslovy Patzan Tzun\nCarnet: 202103206"];
-nodo1[label="Nombre: Juan Carlos Perez Molina\nCarnet: 202109999"];
-nodo2[label="Nombre: Ana María Rodriguez López\nCarnet: 202203405"];
-nodo3[label="Nombre: Carlos Alberto Soto Ramírez\nCarnet: 202305678"];
-nodo4[label="Nombre: María José Gómez Hernández\nCarnet: 202401234"];
-nodo5[label="Nombre: Pablo Andrés Ramirez Silva\nCarnet: 202502345"];
-nodo6[label="Nombre: Diana Carolina Jiménez Reyes\nCarnet: 202604567"];
-nodo7[label="Nombre: Roberto Antonio González Torres\nCarnet: 202706789"];
-nodo8[label="Nombre: Sofía Alejandra Vargas Cruz\nCarnet: 202808901"];
-nodo9[label="Nombre: Diego Alejandro Martínez Méndez\nCarnet: 202901234"];
-nodo10[label="Nombre: Verónica Patricia Herrera Guzmán\nCarnet: 203003456"];
-nodo11[label="Nombre: José Luis Morales Jiménez\nCarnet: 203104567"];
-nodo12[label="Nombre: Marta Elena Sánchez Ruiz\nCarnet: 203206789"];
-nodo13[label="Nombre: Andrés Felipe González Castro\nCarnet: 203308901"];
-nodo14[label="Nombre: Carolina Isabel Méndez García\nCarnet: 203401234"];
-nodo15[label="Nombre: Javier Eduardo Pérez Hernández\nCarnet: 203502345"];
-nodo16[label="Nombre: Alejandra Beatriz Ortiz López\nCarnet: 203604567"];
-nodo17[label="Nombre: Fernando José Ramírez Soto\nCarnet: 203706789"];
+nodo0[label="Nombre: Daniel Alexander Barrera Figueroa\nCarnet: 202004783"];
+nodo1[label="Nombre: Francisco Javier Cetino Mendez\nCarnet: 202006716"];
+nodo2[label="Nombre: Ana Lucia Fletes Ordoñez\nCarnet: 202010003"];
+nodo3[label="Nombre: Velveth Nayely Pérez Yas\nCarnet: 202010810"];
+nodo4[label="Nombre: River Anderson Ismalej Roman\nCarnet: 202100096"];
+nodo5[label="Nombre: Juan Gabriel Ramirez Gramajo\nCarnet: 202100087"];
+nodo6[label="Nombre: Samuel Isaí Muñoz Pereira\nCarnet: 202100119"];
+nodo7[label="Nombre: Luis Rene Yaquian Recinos\nCarnet: 202001471"];
+nodo8[label="Nombre: Fernando Misael Morales Ortiz\nCarnet: 202001950"];
+nodo9[label="Nombre: Allan Estuardo Sitán Bor\nCarnet: 202010046"];
+nodo10[label="Nombre: Wilson Adonías Carrera Aguilar\nCarnet: 202010915"];
+nodo11[label="Nombre: Karen Faviola Ramos Dávila\nCarnet: 202100122"];
+nodo0->nodo1;
+nodo1->nodo0;
+nodo1->nodo2;
+nodo2->nodo1;
+nodo2->nodo3;
+nodo3->nodo2;
+nodo3->nodo4;
+nodo4->nodo3;
+nodo4->nodo5;
+nodo5->nodo4;
+nodo5->nodo6;
+nodo6->nodo5;
+nodo6->nodo7;
+nodo7->nodo6;
+nodo7->nodo8;
+nodo8->nodo7;
+nodo8->nodo9;
+nodo9->nodo8;
+nodo9->nodo10;
+nodo10->nodo9;
+nodo10->nodo11;
+nodo11->nodo10;
+nodo11->nodo0 
+nodo0 -> nodo11
+}do10->nodo11;
+nodo11->nodo10;
+nodo11->nodo12;
+nodo12->nodo11;
+nodo12->nodo0 
+nodo0 -> nodo12
+}� Ramírez Soto\nCarnet: 203706789"];
 nodo18[label="Nombre: Valeria Alejandra González Pérez\nCarnet: 203808901"];
 nodo19[label="Nombre: Miguel Angel Flores González\nCarnet: 203901234"];
 nodo20[label="Nombre: Lucía Fernanda Torres Martínez\nCarnet: 204003456"];

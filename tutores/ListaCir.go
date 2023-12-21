@@ -21,41 +21,20 @@ func (l *ListaDobleCircular) Agregar(carnet int, nombre string, curso string, no
 		l.Longitud++
 	} else {
 		aux := l.Inicio
-		contador := 1
-		for contador < l.Longitud {
-			if l.Inicio.Tutor.Carnet > carnet {
-				nuevoNodo.Siguiente = l.Inicio
-				nuevoNodo.Anterior = l.Inicio.Anterior
-				l.Inicio.Anterior = nuevoNodo
-				l.Inicio = nuevoNodo
-				l.Longitud += 1
+		for i := 0; i < l.Longitud; i++ {
+			if aux.Tutor.Curso == curso {
+				if aux.Tutor.Nota < nota {
+					aux.Tutor = nuevoTutor
+				}
 				return
 			}
-			if aux.Tutor.Carnet < carnet {
-				aux = aux.Siguiente
-			} else {
-				nuevoNodo.Anterior = aux.Anterior
-				aux.Anterior.Siguiente = nuevoNodo
-				nuevoNodo.Siguiente = aux
-				aux.Anterior = nuevoNodo
-				l.Longitud += 1
-				return
-			}
-			contador += 1
+			aux = aux.Siguiente
 		}
-		if aux.Tutor.Carnet > carnet {
-			nuevoNodo.Siguiente = aux
-			nuevoNodo.Anterior = aux.Anterior
-			aux.Anterior.Siguiente = nuevoNodo
-			aux.Anterior = nuevoNodo
-			l.Longitud += 1
-			return
-		}
-		nuevoNodo.Anterior = aux
 		nuevoNodo.Siguiente = l.Inicio
-		aux.Siguiente = nuevoNodo
+		nuevoNodo.Anterior = l.Inicio.Anterior
+		l.Inicio.Anterior.Siguiente = nuevoNodo
 		l.Inicio.Anterior = nuevoNodo
-		l.Longitud += 1
+		l.Longitud++
 	}
 }
 
@@ -198,4 +177,21 @@ func (l *ListaDobleCircular) EliminarTutor(curso string) {
 		}
 		aux = aux.Siguiente
 	}
+}
+
+// Función para obtener la nota más alta en el curso dado en la lista circular
+func (l *ListaDobleCircular) ObtenerNotaMasAltaEnCurso(codigoCurso string) int {
+	if l.Longitud == 0 {
+		return 0
+	}
+
+	maxNota := 0
+	actual := l.Inicio
+	for i := 0; i < l.Longitud; i++ {
+		if actual.Tutor.Curso == codigoCurso && actual.Tutor.Nota > maxNota {
+			maxNota = actual.Tutor.Nota
+		}
+		actual = actual.Siguiente
+	}
+	return maxNota
 }

@@ -16,7 +16,6 @@ func crearArchivo(nombre_archivo string) {
 		}
 		defer file.Close()
 	}
-	fmt.Println("Archivo generado exitosamente")
 }
 
 func escribirArchivo(contenido string, nombre_archivo string) {
@@ -33,7 +32,7 @@ func escribirArchivo(contenido string, nombre_archivo string) {
 	if err != nil {
 		return
 	}
-	fmt.Println("Archivo guardado correctamente")
+	fmt.Println("!Se genero el Reporte Grafico")
 }
 
 func ejecutar(nombre_imagen string, archivo string) {
